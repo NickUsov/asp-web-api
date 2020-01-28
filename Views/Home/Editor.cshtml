@@ -1,0 +1,22 @@
+﻿@model WebApplication9.Models.Person
+<div class="card-header">
+    Edition
+</div>
+<div class="card-body">
+    @using (Html.BeginForm("Edit"))
+    {
+        <div class="form-group">
+            <label>Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Married</label>
+            @Html.EditorFor(model => model.Married, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+</div>

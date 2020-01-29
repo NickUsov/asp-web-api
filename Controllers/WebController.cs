@@ -12,13 +12,13 @@ namespace WebApplication9.Controllers
 {
     public class WebController : ApiController
     {
-        //readonly IRepository<Person> db;
-        //public WebController(IRepository<Person> repo)
-        //{
-        //    db = repo;
-        //}
+        readonly IRepository<Person> db;
+        public WebController(IRepository<Person> repo)
+        {
+            db = repo;
+        }
 
-        StaffRepository db = new StaffRepository();
+        //StaffRepository db = new StaffRepository();
         // GET api/web
         public IEnumerable<Person> GetAll()
         {
@@ -32,9 +32,9 @@ namespace WebApplication9.Controllers
         }
 
         //POST api/web
-        public void PostPerson(Person person)
+        public Person PostPerson(Person person)
         {
-            db.Create(person);
+            return db.Create(person);
         }
 
         //PUT api/web

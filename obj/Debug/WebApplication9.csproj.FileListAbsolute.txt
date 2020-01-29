@@ -90,3 +90,7 @@ C:\Users\student\source\repos\WebApplication9\obj\Debug\WebApplication9.csprojAs
 C:\Users\student\source\repos\WebApplication9\obj\Debug\WebApplication9.csproj.CopyComplete
 C:\Users\student\source\repos\WebApplication9\obj\Debug\WebApplication9.dll
 C:\Users\student\source\repos\WebApplication9\obj\Debug\WebApplication9.pdb
+C:\Users\student\source\repos\WebApplication9\bin\Ninject.Web.WebApi.dll
+C:\Users\student\source\repos\WebApplication9\bin\Ninject.Web.WebApi.WebHost.dll
+C:\Users\student\source\repos\WebApplication9\bin\Ninject.Web.WebApi.xml
+C:\Users\student\source\repos\WebApplication9\bin\Ninject.Web.WebApi.WebHost.xml

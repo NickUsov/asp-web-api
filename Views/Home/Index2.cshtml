@@ -1,0 +1,15 @@
+﻿@using WebApplication9.Models
+@model IEnumerable<WebApplication9.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="card">
+    @Html.Partial("Summary")
+</div>
+<div class="card">
+    @Html.Partial("Editor",new Person())
+</div>

@@ -16,7 +16,8 @@
                 name: ko.observable(""),
                 age: ko.observable(),
                 married: ko.observable(false)
-            }
+            },
+            displaySummary: ko.observable(true)
         }
 
         function sendajaxRequest(  methodName, callback, param, reqData) {
@@ -46,11 +47,17 @@
                 'POST',
                 function (data) {
                     model.people.push(data);
-                    getAllData();
+                    //getAllData();
+                    model.displaySummary(true);
                 },
                 null,
                 { Name: model.editor.name, Age: model.editor.age, Married: model.editor.married }
-        )}
+            )
+        }
+
+        function editorClick() {
+            model.displaySummary(false);
+        }
         $(document).ready(
             function () {
                 getAllData();
@@ -59,7 +66,7 @@
         )
     </script>
     }
-<div class="card">
+<div class="card" data-bind="if: model.displaySummary">
     <div class="card-header">
         List of Persons
     </div>
@@ -75,30 +82,28 @@
                 </tr>
             </thead>
             <tbody data-bind="foreach: model.people">
-                 <tr>
-                        <td data-bind="text: Id">
-                           
-                        </td>
-                        <td data-bind="text: Name">
-                            
-                        </td>
-                        <td data-bind="text: Age">
-                            
-                        </td>
-                        <td>
-                            <input type="checkbox" data-bind="checked: Married" />
-                        </td>
-                        <td>
-                            <button data-bind="click: deletePerson" class="btn btn-success btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                
+                <tr>
+                    <td data-bind="text: Id">
+                    </td>
+                    <td data-bind="text: Name">
+                    </td>
+                    <td data-bind="text: Age">
+                    </td>
+                    <td>
+                        <input type="checkbox" data-bind="checked: Married" />
+                    </td>
+                    <td>
+                        <button data-bind="click: deletePerson" class="btn btn-success btn-sm">Delete</button>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
+        <button data-bind="click: editorClick" class="btn btn-success btn-sm">Edit</button>
     </div>
 
 </div>
-<div class="card">
+<div class="card" data-bind="ifnot: model.displaySummary">
     <div class="card-header">
         Edition
     </div>

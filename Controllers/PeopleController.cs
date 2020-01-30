@@ -32,9 +32,9 @@ namespace WebApplication9.Controllers
 
         //POST api/web
         [HttpPost]
-        public void CreatePerson(Person person)
+        public Person CreatePerson(Person person)
         {
-            db.Create(person);
+            return db.Create(person);
         }
 
         //PUT api/web
